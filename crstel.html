@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="End">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Navigator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0a117f07-5117-4892-982a-c6c59e80ce0e.png" alt="Celestial Navigator logo with star cluster background" class="logo">
+                </div>
+                <h1>Celestial Navigator</h1>
+                <p class="subtitle">Explore the wonders of our solar system</p>
+            </div>
+            <div class="header-space"></div>
+        </header>
+
+        <main class="dashboard">
+            <section class="solar-system-container">
+                <div id="solar-system" class="solar-system">
+                    <!-- Three.js will render here -->
+                </div>
+                <div class="controls">
+                    <button id="toggle-rotation">Pause Rotation</button>
+                    <div class="planet-info-card">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a9e90865-270f-489b-ae63-fda27972275b.png" alt="Close-up view of selected planet with detailed surface texture" class="planet-image">
+                        <h3 id="selected-planet">Select a planet</h3>
+                        <p id="planet-details"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="data-panels">
+                <div class="data-panel">
+                    <h2>Celestial Events</h2>
+                    <div class="events-container">
+                        <div class="event-card" id="next-event">
+                            <h3>Next Event</h3>
+                            <p id="event-name">Loading...</p>
+                            <p id="event-date">-</p>
+                            <button id="more-events">View All Events</button>
+                        </div>
+                        <div class="event-calendar">
+                            <canvas id="events-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-panel">
+                    <h2>Planetary Positions</h2>
+                    <div class="positions-container">
+                        <canvas id="positions-chart"></canvas>
+                        <div class="position-info">
+                            <h3>Current Time: <span id="Astro-time"></span></h3>
+                            <button id="update-positions">Refresh Positions</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section class="constellation-finder">
+            <h2>Stellar Navigation</h2>
+            <div class="finder-container">
+                <div class="sky-map">
+                    <image src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6ab46e49-81e7-4549-8b55-7c60aa521e95.png" alt="Star map with constellation outlines against dark night sky" class="sky-map-image">
+                </div>
+                <div class="constellation-controls">
+                    <select id="constellation-select">
+                        <option value="">Select a constellation</option>
+                    </select>
+                    <button id="locate-constellation">Find in Sky</button>
+                    <div class="constellation-info">
+                        <h3 id="constellation-name"></h3>
+                        <p id="constellation-details"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="app-footer">
+            <p>Data sourced from NASA APIs and astronomical databases</p>
+            <p>© 2023 Celestial Navigator | Created with Three.js and Chart.js</p>
+        </footer>
+    </div>
+</body>
+</html>
+
