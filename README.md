@@ -1,2 +1,2 @@
 # unique-application
-Web application for GitHub
+Web application for Varcel
